@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nala's English Learning Hub — Culips learning notes, vocabulary, shadowing and review." />
+  <title>Nala's English Learning Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <div>
+          <strong>Nala's English Hub</strong>
+          <span>Learn · Practise · Review</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-page="home"><span>⌂</span>学习首页</button>
+        <div class="nav-label">CULIPS</div>
+        <button class="nav-item" data-page="ep294"><span>🎧</span>EP294 · Touch Grass</button>
+        <div class="nav-label">KNOWLEDGE BASE</div>
+        <button class="nav-item" data-page="expressions"><span>💬</span>地道表达库</button>
+        <button class="nav-item" data-page="shadowing"><span>🎙️</span>跟读训练</button>
+        <button class="nav-item" data-page="review"><span>🔄</span>复习中心</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="mini-progress">
+          <div class="mini-progress-top"><span>本期进度</span><strong id="sideProgressText">0%</strong></div>
+          <div class="progress-track"><div class="progress-bar" id="sideProgressBar"></div></div>
+        </div>
+        <button class="ghost-button" id="themeToggle">切换深色模式</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="打开菜单">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="搜索表达、例句或笔记…" />
+        </div>
+        <div class="streak">🔥 <strong id="streakCount">1</strong> day</div>
+      </header>
+
+      <section class="page active" id="home">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">WELCOME BACK, NALA</p>
+            <h1>把听懂的英语，变成你能说出的英语。</h1>
+            <p class="hero-copy">从 Culips 双语笔记开始，逐步积累表达、跟读材料和主动输出练习。</p>
+            <button class="primary-button" data-go="ep294">继续学习 EP294 →</button>
+          </div>
+          <div class="hero-card">
+            <span class="hero-card-label">CURRENT EPISODE</span>
+            <strong>Catch Word #294</strong>
+            <h2>Touch Grass</h2>
+            <p>Internet slang · B2 · 21 min</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><span>已学习单集</span><strong>1</strong><small>Culips episodes</small></article>
+          <article class="stat-card"><span>核心表达</span><strong>11</strong><small>Native expressions</small></article>
+          <article class="stat-card"><span>跟读句子</span><strong>6</strong><small>Shadowing lines</small></article>
+          <article class="stat-card"><span>复习完成度</span><strong id="homeProgress">0%</strong><small>EP294 progress</small></article>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="eyebrow">TODAY'S PLAN</p><h2>今天学什么</h2></div>
+        </div>
+        <div class="task-grid">
+          <button class="task-card" data-go="ep294">
+            <span class="task-icon">📖</span>
+            <div><strong>阅读双语笔记</strong><p>理解 touch grass 与 online slang 的语气区别。</p></div>
+            <span>→</span>
+          </button>
+          <button class="task-card" data-go="shadowing">
+            <span class="task-icon">🎙️</span>
+            <div><strong>完成跟读训练</strong><p>跟读 6 个适合直接用于口语的句子。</p></div>
+            <span>→</span>
+          </button>
+          <button class="task-card" data-go="review">
+            <span class="task-icon">✓</span>
+            <div><strong>完成小测</strong><p>用 5 道题检查是否真正掌握本期内容。</p></div>
+            <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="page" id="ep294">
+        <div class="episode-header">
+          <div>
+            <p class="eyebrow">CULIPS · CATCH WORD #294</p>
+            <h1>Touch Grass</h1>
+            <p>如何用英语谈论“泡在网上”“与现实脱节”，以及这些表达在真实交流中的语气差异。</p>
+          </div>
+          <button class="complete-button" id="markEpisode">标记本期已学完</button>
+        </div>
+
+        <div class="toc">
+          <button data-anchor="summary">内容摘要</button>
+          <button data-anchor="touch-grass">Touch grass</button>
+          <button data-anchor="online">Online expressions</button>
+          <button data-anchor="vocab">重点表达</button>
+          <button data-anchor="output">输出练习</button>
+        </div>
+
+        <article class="lesson-card" id="summary">
+          <p class="eyebrow">EPISODE SUMMARY</p>
+          <h2>本期内容摘要</h2>
+          <div class="bilingual-grid">
+            <div>
+              <h3>English</h3>
+              <p>This episode introduces two modern internet expressions: <strong>touch grass</strong> and <strong>chronically/terminally online</strong>. The hosts explain that “touch grass” is a dismissive way to tell someone to log off, reconnect with reality, and spend time with real people. “Chronically online” and “terminally online” describe people who spend too much time online, with “terminally” sounding more exaggerated and humorous.</p>
+            </div>
+            <div>
+              <h3>中文</h3>
+              <p>本期介绍了两个现代网络表达：<strong>touch grass</strong> 以及 <strong>chronically/terminally online</strong>。节目说明，touch grass 常用于让某人停止沉迷网络、重新接触现实生活和真实的人；而 chronically online 与 terminally online 都用于形容一个人长期泡在网上，其中 terminally 的夸张和调侃意味更强。</p>
+            </div>
+          </div>
+          <label class="check-row"><input type="checkbox" class="progress-check" data-key="summary"> 我已经读完并理解本期摘要</label>
+        </article>
+
+        <article class="lesson-card" id="touch-grass">
+          <p class="eyebrow">KEY EXPRESSION 01</p>
+          <div class="expression-title">
+            <div><h2>touch grass</h2><span class="tone-tag rude">语气较强</span></div>
+            <button class="speak-button" data-speak="Go touch grass.">🔊</button>
+          </div>
+          <p class="definition">To tell someone that they spend too much time online and need to reconnect with real life.</p>
+          <div class="meaning-box">
+            <strong>自然中文</strong>
+            <p>少上点网，回归现实吧；出去接触一下真实世界；别再沉迷网络了。</p>
+          </div>
+          <h3>核心语感</h3>
+          <p>它并不是字面上的“去摸草”，而是一种带有批评、否定或嘲讽意味的网络表达。通常用于一个人过度沉迷网络争论、明星八卦、阴谋论或某个小众网络圈子，以至于对现实产生扭曲认识的情况。</p>
+          <div class="warning">
+            <strong>使用提醒</strong>
+            <p>直接对别人说 <em>Go touch grass</em> 往往显得不耐烦、轻蔑或冒犯。它更常见于网络争论、熟人之间的玩笑，或第三人称吐槽。</p>
+          </div>
+          <div class="example">
+            <span>Podcast example</span>
+            <blockquote>John’s a nice guy, but he really needs to touch grass and stop believing in these crazy ideas.</blockquote>
+            <p>John 人不错，但他真的应该少泡在网上，别再相信这些疯狂的想法了。</p>
+          </div>
+          <div class="example">
+            <span>Natural example</span>
+            <blockquote>You’ve been arguing on Reddit for six hours. Go touch grass.</blockquote>
+            <p>你已经在 Reddit 上吵了六个小时了。出去走走、回归现实吧。</p>
+          </div>
+          <label class="check-row"><input type="checkbox" class="progress-check" data-key="touchgrass"> 我能理解 touch grass 的含义和语气</label>
+        </article>
+
+        <article class="lesson-card" id="online">
+          <p class="eyebrow">KEY EXPRESSIONS 02–03</p>
+          <h2>chronically online vs. terminally online</h2>
+          <div class="compare-grid">
+            <div class="compare-card">
+              <div class="expression-title"><h3>chronically online</h3><button class="speak-button" data-speak="I'm chronically online.">🔊</button></div>
+              <p><strong>含义：</strong>长期花很多时间上网，已经形成持续性的习惯。</p>
+              <p><strong>语气：</strong>轻度批评，也常用于自嘲。</p>
+              <blockquote>I’m chronically online. I check my phone the moment I wake up.</blockquote>
+              <p>我真是长期泡在网上，一醒来就看手机。</p>
+            </div>
+            <div class="compare-card">
+              <div class="expression-title"><h3>terminally online</h3><button class="speak-button" data-speak="Everyone is terminally online these days.">🔊</button></div>
+              <p><strong>含义：</strong>严重沉迷网络，夸张地形容“上网成瘾到没救”。</p>
+              <p><strong>语气：</strong>比 chronically online 更强、更戏谑。</p>
+              <blockquote>Everyone’s so terminally online these days.</blockquote>
+              <p>现在大家都像是严重沉迷网络一样。</p>
+            </div>
+          </div>
+          <div class="nuance-table">
+            <div class="row header"><span>表达</span><span>重点</span><span>常见语气</span></div>
+            <div class="row"><span>chronically online</span><span>长期上网过多</span><span>轻微批评／自嘲</span></div>
+            <div class="row"><span>terminally online</span><span>夸张强调沉迷</span><span>戏谑／夸张</span></div>
+            <div class="row"><span>touch grass</span><span>已经需要回归现实</span><span>强烈／轻蔑／不耐烦</span></div>
+          </div>
+          <label class="check-row"><input type="checkbox" class="progress-check" data-key="online"> 我能区分这三个表达的语气</label>
+        </article>
+
+        <article class="lesson-card" id="vocab">
+          <p class="eyebrow">VOCABULARY & CHUNKS</p>
+          <h2>本期重点表达</h2>
+          <div class="vocab-list">
+            <details open>
+              <summary><strong>be cooped up inside</strong><span>一直闷在屋里</span></summary>
+              <p>She had been cooped up inside all weekend, staring at her laptop.</p>
+            </details>
+            <details>
+              <summary><strong>get too deep into something</strong><span>过度沉迷于某事</span></summary>
+              <p>He got too deep into online conspiracy theories.</p>
+            </details>
+            <details>
+              <summary><strong>be wrapped up in</strong><span>全神贯注于／沉浸在</span></summary>
+              <p>She is so wrapped up in celebrity drama that she talks about nothing else.</p>
+            </details>
+            <details>
+              <summary><strong>lose touch with reality</strong><span>与现实脱节</span></summary>
+              <p>Spending too much time in an online echo chamber can make people lose touch with reality.</p>
+            </details>
+            <details>
+              <summary><strong>a weird corner of the internet</strong><span>互联网某个奇怪的小圈子</span></summary>
+              <p>He found the theory in a weird corner of the internet.</p>
+            </details>
+            <details>
+              <summary><strong>get the last word</strong><span>在争论中说最后一句／占据口头上风</span></summary>
+              <p>He replied “touch grass” just to get the last word.</p>
+            </details>
+            <details>
+              <summary><strong>one-liner</strong><span>简短有力的一句话</span></summary>
+              <p>“Go touch grass” works as a dismissive one-liner online.</p>
+            </details>
+            <details>
+              <summary><strong>doomscroll</strong><span>不停刷负面消息</span></summary>
+              <p>I meant to read a book, but I doomscrolled for an hour instead.</p>
+            </details>
+            <details>
+              <summary><strong>That doesn’t shock me one bit.</strong><span>我一点也不意外</span></summary>
+              <p>A natural fixed chunk used when something is completely unsurprising.</p>
+            </details>
+          </div>
+          <label class="check-row"><input type="checkbox" class="progress-check" data-key="vocab"> 我已经浏览并朗读重点表达</label>
+        </article>
+
+        <article class="lesson-card" id="output">
+          <p class="eyebrow">ACTIVE OUTPUT</p>
+          <h2>把输入变成输出</h2>
+          <div class="prompt-card">
+            <h3>Speaking question</h3>
+            <p>Do you think people are becoming too chronically online? Why or why not?</p>
+            <button class="reveal-button" data-reveal="answerModel">查看参考回答</button>
+            <div class="hidden-answer" id="answerModel">
+              <p>I think many people are becoming chronically online because our phones are always within reach. Even when we are not actively scrolling, notifications constantly pull our attention back online. I sometimes catch myself doomscrolling before bed, so I’m trying to replace that habit with reading. I don’t think everyone needs to “touch grass,” but most of us could benefit from spending more time away from screens.</p>
+            </div>
+          </div>
+          <div class="writing-area">
+            <label for="personalAnswer">写下你的回答（会自动保存在当前浏览器）</label>
+            <textarea id="personalAnswer" placeholder="Personally, I think…"></textarea>
+          </div>
+          <label class="check-row"><input type="checkbox" class="progress-check" data-key="output"> 我已经完成一次口语或写作输出</label>
+        </article>
+      </section>
+
+      <section class="page" id="expressions">
+        <div class="page-header">
+          <p class="eyebrow">KNOWLEDGE BASE</p>
+          <h1>地道表达库</h1>
+          <p>所有从 Culips 中提取的可复用表达，今后会持续累积到这里。</p>
+        </div>
+        <div class="filter-row">
+          <button class="chip active" data-filter="all">全部</button>
+          <button class="chip" data-filter="internet">网络生活</button>
+          <button class="chip" data-filter="conversation">日常交流</button>
+        </div>
+        <div class="expression-grid" id="expressionGrid">
+          <article class="expression-card" data-category="internet"><span>网络俚语</span><h3>touch grass</h3><p>少上网，回归现实。</p><small>EP294</small></article>
+          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>chronically online</h3><p>长期花太多时间上网。</p><small>EP294</small></article>
+          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>terminally online</h3><p>夸张地形容严重沉迷网络。</p><small>EP294</small></article>
+          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>doomscroll</h3><p>不停地刷负面新闻或内容。</p><small>EP294</small></article>
+          <article class="expression-card" data-category="conversation"><span>日常表达</span><h3>That doesn’t shock me one bit.</h3><p>我一点也不意外。</p><small>EP294</small></article>
+          <article class="expression-card" data-category="conversation"><span>争论表达</span><h3>get the last word</h3><p>在争论中说最后一句，占据口头上风。</p><small>EP294</small></article>
+        </div>
+      </section>
+
+      <section class="page" id="shadowing">
+        <div class="page-header">
+          <p class="eyebrow">SPEAKING LAB</p>
+          <h1>跟读训练</h1>
+          <p>先听，再模仿节奏和重音，最后脱稿复述。</p>
+        </div>
+        <div class="shadow-list">
+          <article class="shadow-card"><span>01</span><div><p>John really needs to touch grass.</p><small>John 真的需要少上网、回归现实。</small></div><button class="speak-button" data-speak="John really needs to touch grass.">🔊</button></article>
+          <article class="shadow-card"><span>02</span><div><p>Everyone is terminally online these days.</p><small>现在大家都像是严重沉迷网络一样。</small></div><button class="speak-button" data-speak="Everyone is terminally online these days.">🔊</button></article>
+          <article class="shadow-card"><span>03</span><div><p>That doesn’t shock me one bit.</p><small>我一点也不意外。</small></div><button class="speak-button" data-speak="That doesn't shock me one bit.">🔊</button></article>
+          <article class="shadow-card"><span>04</span><div><p>He’s completely lost touch with reality.</p><small>他已经完全与现实脱节了。</small></div><button class="speak-button" data-speak="He's completely lost touch with reality.">🔊</button></article>
+          <article class="shadow-card"><span>05</span><div><p>I meant to read, but I doomscrolled instead.</p><small>我本来想读书，结果却一直刷负面消息。</small></div><button class="speak-button" data-speak="I meant to read, but I doomscrolled instead.">🔊</button></article>
+          <article class="shadow-card"><span>06</span><div><p>She’s too wrapped up in online drama.</p><small>她太沉迷网络八卦了。</small></div><button class="speak-button" data-speak="She's too wrapped up in online drama.">🔊</button></article>
+        </div>
+        <label class="check-row standalone"><input type="checkbox" class="progress-check" data-key="shadowing"> 我已经完成本期跟读训练</label>
+      </section>
+
+      <section class="page" id="review">
+        <div class="page-header">
+          <p class="eyebrow">REVIEW SYSTEM</p>
+          <h1>EP294 小测</h1>
+          <p>完成后点击提交，网站会自动计算得分。</p>
+        </div>
+        <form class="quiz" id="quizForm">
+          <fieldset><legend>1. “Touch grass” 最接近哪一个意思？</legend>
+            <label><input type="radio" name="q1" value="a"> 去公园观察植物</label>
+            <label><input type="radio" name="q1" value="b"> 停止沉迷网络，重新接触现实</label>
+            <label><input type="radio" name="q1" value="c"> 开始户外健身</label>
+          </fieldset>
+          <fieldset><legend>2. 哪个表达最适合轻松地自嘲自己总在上网？</legend>
+            <label><input type="radio" name="q2" value="a"> I’m chronically online.</label>
+            <label><input type="radio" name="q2" value="b"> Go touch grass.</label>
+            <label><input type="radio" name="q2" value="c"> I’m touching grass.</label>
+          </fieldset>
+          <fieldset><legend>3. “terminally online” 与 “chronically online” 相比，通常：</legend>
+            <label><input type="radio" name="q3" value="a"> 更正式、更中性</label>
+            <label><input type="radio" name="q3" value="b"> 更夸张、更有戏谑感</label>
+            <label><input type="radio" name="q3" value="c"> 只用于医学场合</label>
+          </fieldset>
+          <fieldset><legend>4. “doomscroll” 的意思是：</legend>
+            <label><input type="radio" name="q4" value="a"> 不停刷负面信息</label>
+            <label><input type="radio" name="q4" value="b"> 快速浏览工作邮件</label>
+            <label><input type="radio" name="q4" value="c"> 在线阅读小说</label>
+          </fieldset>
+          <fieldset><legend>5. “That doesn’t shock me one bit.” 表示：</legend>
+            <label><input type="radio" name="q5" value="a"> 我非常震惊</label>
+            <label><input type="radio" name="q5" value="b"> 我有一点不安</label>
+            <label><input type="radio" name="q5" value="c"> 我一点也不意外</label>
+          </fieldset>
+          <button class="primary-button" type="submit">提交答案</button>
+          <div class="quiz-result" id="quizResult"></div>
+        </form>
+      </section>
+
+      <div class="search-panel" id="searchPanel"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
