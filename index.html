@@ -1,330 +1,373 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Nala's English Learning Hub — Culips learning notes, vocabulary, shadowing and review." />
-  <title>Nala's English Learning Hub</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nala's English Learning Hub</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-mark">N</div>
-        <div>
-          <strong>Nala's English Hub</strong>
-          <span>Learn · Practise · Review</span>
-        </div>
-      </div>
+<aside>
+  <div class="brand"><b>NALA</b><span>ENGLISH LEARNING HUB</span></div>
+  <nav>
+    <button class="active" data-page="home">学习首页</button>
+    <div class="label">CULIPS · CATCH WORD</div>
+    <button data-page="transcript">EP294 全文中英对照</button>
+    <button data-page="notes">EP294 深度学习笔记</button>
+    <button data-page="expressions">表达与词汇库</button>
+    <button data-page="practice">跟读与输出练习</button>
+  </nav>
+  <div class="side-note">网站内容结构：<br><strong>全文对照 → 理解 → 拓展 → 输出</strong></div>
+</aside>
 
-      <nav class="nav">
-        <button class="nav-item active" data-page="home"><span>⌂</span>学习首页</button>
-        <div class="nav-label">CULIPS</div>
-        <button class="nav-item" data-page="ep294"><span>🎧</span>EP294 · Touch Grass</button>
-        <div class="nav-label">KNOWLEDGE BASE</div>
-        <button class="nav-item" data-page="expressions"><span>💬</span>地道表达库</button>
-        <button class="nav-item" data-page="shadowing"><span>🎙️</span>跟读训练</button>
-        <button class="nav-item" data-page="review"><span>🔄</span>复习中心</button>
-      </nav>
+<main>
+<header>
+  <button id="menu">☰</button>
+  <div><strong>Nala's English Hub</strong><small>Culips learning workspace</small></div>
+  <button id="theme">深色模式</button>
+</header>
 
-      <div class="sidebar-footer">
-        <div class="mini-progress">
-          <div class="mini-progress-top"><span>本期进度</span><strong id="sideProgressText">0%</strong></div>
-          <div class="progress-track"><div class="progress-bar" id="sideProgressBar"></div></div>
-        </div>
-        <button class="ghost-button" id="themeToggle">切换深色模式</button>
-      </div>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <button class="menu-button" id="menuButton" aria-label="打开菜单">☰</button>
-        <div class="search-wrap">
-          <span>⌕</span>
-          <input id="globalSearch" type="search" placeholder="搜索表达、例句或笔记…" />
-        </div>
-        <div class="streak">🔥 <strong id="streakCount">1</strong> day</div>
-      </header>
-
-      <section class="page active" id="home">
-        <div class="hero">
-          <div>
-            <p class="eyebrow">WELCOME BACK, NALA</p>
-            <h1>把听懂的英语，变成你能说出的英语。</h1>
-            <p class="hero-copy">从 Culips 双语笔记开始，逐步积累表达、跟读材料和主动输出练习。</p>
-            <button class="primary-button" data-go="ep294">继续学习 EP294 →</button>
-          </div>
-          <div class="hero-card">
-            <span class="hero-card-label">CURRENT EPISODE</span>
-            <strong>Catch Word #294</strong>
-            <h2>Touch Grass</h2>
-            <p>Internet slang · B2 · 21 min</p>
-          </div>
-        </div>
-
-        <div class="stats-grid">
-          <article class="stat-card"><span>已学习单集</span><strong>1</strong><small>Culips episodes</small></article>
-          <article class="stat-card"><span>核心表达</span><strong>11</strong><small>Native expressions</small></article>
-          <article class="stat-card"><span>跟读句子</span><strong>6</strong><small>Shadowing lines</small></article>
-          <article class="stat-card"><span>复习完成度</span><strong id="homeProgress">0%</strong><small>EP294 progress</small></article>
-        </div>
-
-        <div class="section-heading">
-          <div><p class="eyebrow">TODAY'S PLAN</p><h2>今天学什么</h2></div>
-        </div>
-        <div class="task-grid">
-          <button class="task-card" data-go="ep294">
-            <span class="task-icon">📖</span>
-            <div><strong>阅读双语笔记</strong><p>理解 touch grass 与 online slang 的语气区别。</p></div>
-            <span>→</span>
-          </button>
-          <button class="task-card" data-go="shadowing">
-            <span class="task-icon">🎙️</span>
-            <div><strong>完成跟读训练</strong><p>跟读 6 个适合直接用于口语的句子。</p></div>
-            <span>→</span>
-          </button>
-          <button class="task-card" data-go="review">
-            <span class="task-icon">✓</span>
-            <div><strong>完成小测</strong><p>用 5 道题检查是否真正掌握本期内容。</p></div>
-            <span>→</span>
-          </button>
-        </div>
-      </section>
-
-      <section class="page" id="ep294">
-        <div class="episode-header">
-          <div>
-            <p class="eyebrow">CULIPS · CATCH WORD #294</p>
-            <h1>Touch Grass</h1>
-            <p>如何用英语谈论“泡在网上”“与现实脱节”，以及这些表达在真实交流中的语气差异。</p>
-          </div>
-          <button class="complete-button" id="markEpisode">标记本期已学完</button>
-        </div>
-
-        <div class="toc">
-          <button data-anchor="summary">内容摘要</button>
-          <button data-anchor="touch-grass">Touch grass</button>
-          <button data-anchor="online">Online expressions</button>
-          <button data-anchor="vocab">重点表达</button>
-          <button data-anchor="output">输出练习</button>
-        </div>
-
-        <article class="lesson-card" id="summary">
-          <p class="eyebrow">EPISODE SUMMARY</p>
-          <h2>本期内容摘要</h2>
-          <div class="bilingual-grid">
-            <div>
-              <h3>English</h3>
-              <p>This episode introduces two modern internet expressions: <strong>touch grass</strong> and <strong>chronically/terminally online</strong>. The hosts explain that “touch grass” is a dismissive way to tell someone to log off, reconnect with reality, and spend time with real people. “Chronically online” and “terminally online” describe people who spend too much time online, with “terminally” sounding more exaggerated and humorous.</p>
-            </div>
-            <div>
-              <h3>中文</h3>
-              <p>本期介绍了两个现代网络表达：<strong>touch grass</strong> 以及 <strong>chronically/terminally online</strong>。节目说明，touch grass 常用于让某人停止沉迷网络、重新接触现实生活和真实的人；而 chronically online 与 terminally online 都用于形容一个人长期泡在网上，其中 terminally 的夸张和调侃意味更强。</p>
-            </div>
-          </div>
-          <label class="check-row"><input type="checkbox" class="progress-check" data-key="summary"> 我已经读完并理解本期摘要</label>
-        </article>
-
-        <article class="lesson-card" id="touch-grass">
-          <p class="eyebrow">KEY EXPRESSION 01</p>
-          <div class="expression-title">
-            <div><h2>touch grass</h2><span class="tone-tag rude">语气较强</span></div>
-            <button class="speak-button" data-speak="Go touch grass.">🔊</button>
-          </div>
-          <p class="definition">To tell someone that they spend too much time online and need to reconnect with real life.</p>
-          <div class="meaning-box">
-            <strong>自然中文</strong>
-            <p>少上点网，回归现实吧；出去接触一下真实世界；别再沉迷网络了。</p>
-          </div>
-          <h3>核心语感</h3>
-          <p>它并不是字面上的“去摸草”，而是一种带有批评、否定或嘲讽意味的网络表达。通常用于一个人过度沉迷网络争论、明星八卦、阴谋论或某个小众网络圈子，以至于对现实产生扭曲认识的情况。</p>
-          <div class="warning">
-            <strong>使用提醒</strong>
-            <p>直接对别人说 <em>Go touch grass</em> 往往显得不耐烦、轻蔑或冒犯。它更常见于网络争论、熟人之间的玩笑，或第三人称吐槽。</p>
-          </div>
-          <div class="example">
-            <span>Podcast example</span>
-            <blockquote>John’s a nice guy, but he really needs to touch grass and stop believing in these crazy ideas.</blockquote>
-            <p>John 人不错，但他真的应该少泡在网上，别再相信这些疯狂的想法了。</p>
-          </div>
-          <div class="example">
-            <span>Natural example</span>
-            <blockquote>You’ve been arguing on Reddit for six hours. Go touch grass.</blockquote>
-            <p>你已经在 Reddit 上吵了六个小时了。出去走走、回归现实吧。</p>
-          </div>
-          <label class="check-row"><input type="checkbox" class="progress-check" data-key="touchgrass"> 我能理解 touch grass 的含义和语气</label>
-        </article>
-
-        <article class="lesson-card" id="online">
-          <p class="eyebrow">KEY EXPRESSIONS 02–03</p>
-          <h2>chronically online vs. terminally online</h2>
-          <div class="compare-grid">
-            <div class="compare-card">
-              <div class="expression-title"><h3>chronically online</h3><button class="speak-button" data-speak="I'm chronically online.">🔊</button></div>
-              <p><strong>含义：</strong>长期花很多时间上网，已经形成持续性的习惯。</p>
-              <p><strong>语气：</strong>轻度批评，也常用于自嘲。</p>
-              <blockquote>I’m chronically online. I check my phone the moment I wake up.</blockquote>
-              <p>我真是长期泡在网上，一醒来就看手机。</p>
-            </div>
-            <div class="compare-card">
-              <div class="expression-title"><h3>terminally online</h3><button class="speak-button" data-speak="Everyone is terminally online these days.">🔊</button></div>
-              <p><strong>含义：</strong>严重沉迷网络，夸张地形容“上网成瘾到没救”。</p>
-              <p><strong>语气：</strong>比 chronically online 更强、更戏谑。</p>
-              <blockquote>Everyone’s so terminally online these days.</blockquote>
-              <p>现在大家都像是严重沉迷网络一样。</p>
-            </div>
-          </div>
-          <div class="nuance-table">
-            <div class="row header"><span>表达</span><span>重点</span><span>常见语气</span></div>
-            <div class="row"><span>chronically online</span><span>长期上网过多</span><span>轻微批评／自嘲</span></div>
-            <div class="row"><span>terminally online</span><span>夸张强调沉迷</span><span>戏谑／夸张</span></div>
-            <div class="row"><span>touch grass</span><span>已经需要回归现实</span><span>强烈／轻蔑／不耐烦</span></div>
-          </div>
-          <label class="check-row"><input type="checkbox" class="progress-check" data-key="online"> 我能区分这三个表达的语气</label>
-        </article>
-
-        <article class="lesson-card" id="vocab">
-          <p class="eyebrow">VOCABULARY & CHUNKS</p>
-          <h2>本期重点表达</h2>
-          <div class="vocab-list">
-            <details open>
-              <summary><strong>be cooped up inside</strong><span>一直闷在屋里</span></summary>
-              <p>She had been cooped up inside all weekend, staring at her laptop.</p>
-            </details>
-            <details>
-              <summary><strong>get too deep into something</strong><span>过度沉迷于某事</span></summary>
-              <p>He got too deep into online conspiracy theories.</p>
-            </details>
-            <details>
-              <summary><strong>be wrapped up in</strong><span>全神贯注于／沉浸在</span></summary>
-              <p>She is so wrapped up in celebrity drama that she talks about nothing else.</p>
-            </details>
-            <details>
-              <summary><strong>lose touch with reality</strong><span>与现实脱节</span></summary>
-              <p>Spending too much time in an online echo chamber can make people lose touch with reality.</p>
-            </details>
-            <details>
-              <summary><strong>a weird corner of the internet</strong><span>互联网某个奇怪的小圈子</span></summary>
-              <p>He found the theory in a weird corner of the internet.</p>
-            </details>
-            <details>
-              <summary><strong>get the last word</strong><span>在争论中说最后一句／占据口头上风</span></summary>
-              <p>He replied “touch grass” just to get the last word.</p>
-            </details>
-            <details>
-              <summary><strong>one-liner</strong><span>简短有力的一句话</span></summary>
-              <p>“Go touch grass” works as a dismissive one-liner online.</p>
-            </details>
-            <details>
-              <summary><strong>doomscroll</strong><span>不停刷负面消息</span></summary>
-              <p>I meant to read a book, but I doomscrolled for an hour instead.</p>
-            </details>
-            <details>
-              <summary><strong>That doesn’t shock me one bit.</strong><span>我一点也不意外</span></summary>
-              <p>A natural fixed chunk used when something is completely unsurprising.</p>
-            </details>
-          </div>
-          <label class="check-row"><input type="checkbox" class="progress-check" data-key="vocab"> 我已经浏览并朗读重点表达</label>
-        </article>
-
-        <article class="lesson-card" id="output">
-          <p class="eyebrow">ACTIVE OUTPUT</p>
-          <h2>把输入变成输出</h2>
-          <div class="prompt-card">
-            <h3>Speaking question</h3>
-            <p>Do you think people are becoming too chronically online? Why or why not?</p>
-            <button class="reveal-button" data-reveal="answerModel">查看参考回答</button>
-            <div class="hidden-answer" id="answerModel">
-              <p>I think many people are becoming chronically online because our phones are always within reach. Even when we are not actively scrolling, notifications constantly pull our attention back online. I sometimes catch myself doomscrolling before bed, so I’m trying to replace that habit with reading. I don’t think everyone needs to “touch grass,” but most of us could benefit from spending more time away from screens.</p>
-            </div>
-          </div>
-          <div class="writing-area">
-            <label for="personalAnswer">写下你的回答（会自动保存在当前浏览器）</label>
-            <textarea id="personalAnswer" placeholder="Personally, I think…"></textarea>
-          </div>
-          <label class="check-row"><input type="checkbox" class="progress-check" data-key="output"> 我已经完成一次口语或写作输出</label>
-        </article>
-      </section>
-
-      <section class="page" id="expressions">
-        <div class="page-header">
-          <p class="eyebrow">KNOWLEDGE BASE</p>
-          <h1>地道表达库</h1>
-          <p>所有从 Culips 中提取的可复用表达，今后会持续累积到这里。</p>
-        </div>
-        <div class="filter-row">
-          <button class="chip active" data-filter="all">全部</button>
-          <button class="chip" data-filter="internet">网络生活</button>
-          <button class="chip" data-filter="conversation">日常交流</button>
-        </div>
-        <div class="expression-grid" id="expressionGrid">
-          <article class="expression-card" data-category="internet"><span>网络俚语</span><h3>touch grass</h3><p>少上网，回归现实。</p><small>EP294</small></article>
-          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>chronically online</h3><p>长期花太多时间上网。</p><small>EP294</small></article>
-          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>terminally online</h3><p>夸张地形容严重沉迷网络。</p><small>EP294</small></article>
-          <article class="expression-card" data-category="internet"><span>网络生活</span><h3>doomscroll</h3><p>不停地刷负面新闻或内容。</p><small>EP294</small></article>
-          <article class="expression-card" data-category="conversation"><span>日常表达</span><h3>That doesn’t shock me one bit.</h3><p>我一点也不意外。</p><small>EP294</small></article>
-          <article class="expression-card" data-category="conversation"><span>争论表达</span><h3>get the last word</h3><p>在争论中说最后一句，占据口头上风。</p><small>EP294</small></article>
-        </div>
-      </section>
-
-      <section class="page" id="shadowing">
-        <div class="page-header">
-          <p class="eyebrow">SPEAKING LAB</p>
-          <h1>跟读训练</h1>
-          <p>先听，再模仿节奏和重音，最后脱稿复述。</p>
-        </div>
-        <div class="shadow-list">
-          <article class="shadow-card"><span>01</span><div><p>John really needs to touch grass.</p><small>John 真的需要少上网、回归现实。</small></div><button class="speak-button" data-speak="John really needs to touch grass.">🔊</button></article>
-          <article class="shadow-card"><span>02</span><div><p>Everyone is terminally online these days.</p><small>现在大家都像是严重沉迷网络一样。</small></div><button class="speak-button" data-speak="Everyone is terminally online these days.">🔊</button></article>
-          <article class="shadow-card"><span>03</span><div><p>That doesn’t shock me one bit.</p><small>我一点也不意外。</small></div><button class="speak-button" data-speak="That doesn't shock me one bit.">🔊</button></article>
-          <article class="shadow-card"><span>04</span><div><p>He’s completely lost touch with reality.</p><small>他已经完全与现实脱节了。</small></div><button class="speak-button" data-speak="He's completely lost touch with reality.">🔊</button></article>
-          <article class="shadow-card"><span>05</span><div><p>I meant to read, but I doomscrolled instead.</p><small>我本来想读书，结果却一直刷负面消息。</small></div><button class="speak-button" data-speak="I meant to read, but I doomscrolled instead.">🔊</button></article>
-          <article class="shadow-card"><span>06</span><div><p>She’s too wrapped up in online drama.</p><small>她太沉迷网络八卦了。</small></div><button class="speak-button" data-speak="She's too wrapped up in online drama.">🔊</button></article>
-        </div>
-        <label class="check-row standalone"><input type="checkbox" class="progress-check" data-key="shadowing"> 我已经完成本期跟读训练</label>
-      </section>
-
-      <section class="page" id="review">
-        <div class="page-header">
-          <p class="eyebrow">REVIEW SYSTEM</p>
-          <h1>EP294 小测</h1>
-          <p>完成后点击提交，网站会自动计算得分。</p>
-        </div>
-        <form class="quiz" id="quizForm">
-          <fieldset><legend>1. “Touch grass” 最接近哪一个意思？</legend>
-            <label><input type="radio" name="q1" value="a"> 去公园观察植物</label>
-            <label><input type="radio" name="q1" value="b"> 停止沉迷网络，重新接触现实</label>
-            <label><input type="radio" name="q1" value="c"> 开始户外健身</label>
-          </fieldset>
-          <fieldset><legend>2. 哪个表达最适合轻松地自嘲自己总在上网？</legend>
-            <label><input type="radio" name="q2" value="a"> I’m chronically online.</label>
-            <label><input type="radio" name="q2" value="b"> Go touch grass.</label>
-            <label><input type="radio" name="q2" value="c"> I’m touching grass.</label>
-          </fieldset>
-          <fieldset><legend>3. “terminally online” 与 “chronically online” 相比，通常：</legend>
-            <label><input type="radio" name="q3" value="a"> 更正式、更中性</label>
-            <label><input type="radio" name="q3" value="b"> 更夸张、更有戏谑感</label>
-            <label><input type="radio" name="q3" value="c"> 只用于医学场合</label>
-          </fieldset>
-          <fieldset><legend>4. “doomscroll” 的意思是：</legend>
-            <label><input type="radio" name="q4" value="a"> 不停刷负面信息</label>
-            <label><input type="radio" name="q4" value="b"> 快速浏览工作邮件</label>
-            <label><input type="radio" name="q4" value="c"> 在线阅读小说</label>
-          </fieldset>
-          <fieldset><legend>5. “That doesn’t shock me one bit.” 表示：</legend>
-            <label><input type="radio" name="q5" value="a"> 我非常震惊</label>
-            <label><input type="radio" name="q5" value="b"> 我有一点不安</label>
-            <label><input type="radio" name="q5" value="c"> 我一点也不意外</label>
-          </fieldset>
-          <button class="primary-button" type="submit">提交答案</button>
-          <div class="quiz-result" id="quizResult"></div>
-        </form>
-      </section>
-
-      <div class="search-panel" id="searchPanel"></div>
-    </main>
+<section class="page active" id="home">
+  <div class="hero">
+    <p class="eyebrow">CULIPS LEARNING NOTEBOOK</p>
+    <h1>先完整理解原文，<br>再把表达变成自己的英语。</h1>
+    <p>新版学习顺序已经调整：每一期首先提供 Transcript 全文中英对照；其后才是主题摘要、表达辨析、词汇扩展、跟读和输出练习。</p>
+    <button class="primary" data-go="transcript">开始阅读 EP294 全文 →</button>
   </div>
-  <script src="app.js"></script>
-</body>
-</html>
+  <div class="overview">
+    <article><span>01</span><h3>全文中英对照</h3><p>完整保留官方 Transcript，并按语义段落提供中文对照。</p></article>
+    <article><span>02</span><h3>深度理解</h3><p>梳理节目主线、表达语气、使用限制和文化背景。</p></article>
+    <article><span>03</span><h3>知识拓展</h3><p>沉淀固定搭配、地道表达、例句和近义表达。</p></article>
+    <article><span>04</span><h3>主动输出</h3><p>通过朗读、跟读、口语问题和写作练习完成转化。</p></article>
+  </div>
+</section>
+
+<section class="page" id="transcript">
+  <div class="page-title">
+    <p class="eyebrow">CATCH WORD #294 · 21:03</p>
+    <h1>Touch Grass</h1>
+    <p>全文按照节目时间顺序呈现。左侧为 Transcript 原文，右侧为中文对照。原文保留上传文件中的措辞和时间戳。</p>
+  </div>
+  <div class="toolbar">
+    <button class="view active" data-view="both">中英对照</button>
+    <button class="view" data-view="en">仅英文</button>
+    <button class="view" data-view="zh">仅中文</button>
+    <input id="findText" placeholder="在全文中搜索…">
+  </div>
+  <div id="transcriptContent">
+    <article class="transcript-block" id="part-1">
+      <div class="block-head">
+        <div><span class="part-no">PART 01</span><h2>节目开场与本期主题</h2></div>
+        <span class="time">00:00–02:28</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[00:00 - 00:06] Hello and welcome to Catch Word, the QLips vocabulary series where we teach you idioms, slang,
+[00:06 - 00:13] expressions, phrase-overbes and more that will help you build your English vocabulary which will
+[00:13 - 00:19] improve your speaking and listening skills. Joining me today as my co-host is Indiana. Hey there,
+[00:19 - 00:26] Indiana, how are you? Hey, Andrew, I am doing well. How have you been? I&#x27;m doing well as well,
+[00:26 - 00:33] and Indiana, I think we have a couple of fun expressions today. I think maybe to an extent,
+[00:34 - 00:40] they are appropriate for us because I think sometimes you could use these expressions maybe to
+[00:40 - 00:48] talk about the kinds of lifestyles that we have, Indiana, and in fact, maybe you don&#x27;t realize it,
+[00:48 - 00:55] but you are the inspiration for this episode because you used one of these expressions in a recent
+[00:55 - 01:02] QLips episode and I noticed that and I thought, we got to expand on it and teach our listeners
+[01:02 - 01:07] this expression in more detail in Catch Word. And so that&#x27;s what we&#x27;re doing here today.
+[01:07 - 01:13] Guys, we&#x27;re going to teach you two expressions that are kind of new and kind of like hip, slangy
+[01:13 - 01:20] internet expressions that we use to talk about people who are always online and are always using
+[01:20 - 01:26] the internet and in fact, Indiana, I think it&#x27;s not just you and me. It&#x27;s like everybody these days,
+[01:26 - 01:32] we&#x27;re always connected, always online, always using apps and our phones and all of our devices.
+[01:32 - 01:38] So these are very appropriate expressions, I think, for today&#x27;s modern lifestyle. Guys, we&#x27;ll get
+[01:38 - 01:43] into our lesson here in a second and explain them and give you some examples of how to use these
+[01:43 - 01:49] two great expressions. But before we do, I want to let you know that there&#x27;s an interactive transcript
+[01:49 - 01:56] and a study guide that is available for this episode for all QLips members. Inside the study
+[01:56 - 02:03] guide, there will be detailed explanations and real world examples of how you can use all of the
+[02:03 - 02:10] interesting vocabulary that you hear me and Indiana use in this episode. There&#x27;s also a quiz
+[02:10 - 02:16] and more. So all QLips members can get the study guide and the interactive transcript. If you&#x27;re
+[02:16 - 02:21] not a QLips member yet, but you&#x27;d like to sign up, then just visit our website, QLips.com.
+[02:21 - 02:28] You can learn about all of the details and do that there. Okay, let&#x27;s get started with the lesson</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>大家好，欢迎收听 Catch Word。这个 Culips 词汇系列会教授习语、俚语、固定表达、短语动词等内容，帮助大家扩充英语词汇量，从而提升口语和听力能力。今天和 Andrew 一起主持节目的是 Indiana。两人互相问候后，Andrew 表示，本期要讲的两个表达既有趣，也很符合他们自己的生活方式。事实上，Indiana 还是这一期节目的灵感来源，因为她最近在另一集 Culips 节目中使用了其中一个表达，Andrew 注意到后，觉得应该在 Catch Word 里进行更详细的讲解。</p><p>本期将介绍两个比较新、很流行、带有网络俚语色彩的表达，用来谈论那些总是在线、一直使用互联网的人。Andrew 指出，这种状态并不只属于他和 Indiana，如今几乎每个人都一直保持连接，不断使用应用程序、手机和各种电子设备，所以这些表达非常符合现代生活。</p><p>正式开始讲解前，Andrew 介绍了本期配套的互动式逐字稿和学习指南。Culips 会员可以在学习指南中看到详细解释、真实语境中的例句、测验以及更多学习内容；尚未成为会员的听众可以前往 Culips 官网了解并注册。随后，Andrew 请 Indiana 介绍今天的两个核心表达。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-2">
+      <div class="block-head">
+        <div><span class="part-no">PART 02</span><h2>Touch grass 的基本含义</h2></div>
+        <span class="time">02:28–04:36</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[02:28 - 02:33] today, Indiana. I&#x27;ll let you do the honors. What are the two key expressions that we&#x27;re going to
+[02:33 - 02:43] teach everyone today? Today we&#x27;re talking about the expression touch grass as an go-touch grass.
+[02:43 - 02:47] You may have seen this online a few times or maybe even heard it in real life.
+[02:47 - 02:56] And we are also talking about being terminally or chronically online. So just grabbing a person
+[02:56 - 03:05] as terminally or chronically online. Okay, very good. The first expression touch grass and the second
+[03:05 - 03:12] one chronically online or terminally online. I think we use them both and they both have the same
+[03:12 - 03:19] meaning. But let&#x27;s start with touch grass. So we know grass is like this plant that grows outside,
+[03:19 - 03:25] right? Maybe you&#x27;d see grass growing in a park or maybe you&#x27;d see grass growing in a field.
+[03:26 - 03:33] So just plant outside. Why would we tell someone to touch grass? When would we use this expression?
+[03:34 - 03:40] You might expect that this would be something like you should reconnect with nature or enjoy
+[03:40 - 03:46] some time outside, get some sun. But it&#x27;s really specifically to tell somebody that they have been
+[03:46 - 03:54] cooped up inside, staring at their phone or computer too long and getting way too deep into the
+[03:54 - 04:02] internet, getting too disconnected from reality and what really matters. So this is sort of like
+[04:02 - 04:09] almost an insult or a joke that you could say. You could tell somebody you need to go touch grass
+[04:09 - 04:15] or Samantha has been online way too much recently. She really needs to touch grass. It&#x27;s this
+[04:15 - 04:20] criticism that you would make saying that somebody needs to reconnect with reality. Like they&#x27;re
+[04:20 - 04:27] getting too deep into the weeds, perhaps in conspiracy theories or like celebrity drama on social
+[04:27 - 04:36] media and no longer in touch with what matters. Yeah, it reminds me of like when I look on Instagram</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>Indiana 说明，第一个表达是 touch grass，常见形式是 Go touch grass。听众可能已经在网上见过，也可能在现实生活中听别人说过。第二组表达是 terminally online 和 chronically online，用来形容一个人长期或严重地泡在网上。Andrew 总结说，本期重点就是 touch grass，以及 chronically online / terminally online。</p><p>接着，两人从 touch grass 的字面意思讲起。grass 是生长在公园、田野等户外环境中的草。那么，为什么要叫别人“去摸草”呢？表面上看，它好像是在建议某人亲近自然、出去晒太阳，但它实际有非常具体的网络含义：一个人长时间闷在室内，盯着手机或电脑，在互联网里越陷越深，逐渐脱离现实，也忘记真正重要的事情。</p><p>因此，touch grass 往往接近一句带有讽刺意味的批评，有时像玩笑，有时也像轻微侮辱。你可以说 You need to go touch grass，或者说 Samantha 最近上网太多了，她真的需要 touch grass。它是在批评某人应该重新和现实建立联系，因为对方可能在阴谋论、明星八卦等网络内容中钻得太深，已经忽视现实中真正重要的事情。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-3">
+      <div class="block-head">
+        <div><span class="part-no">PART 03</span><h2>社交媒体如何扭曲现实</h2></div>
+        <span class="time">04:36–06:46</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[04:36 - 04:44] and all I see on Instagram are beautiful people wearing expensive clothes, driving the nicest cars,
+[04:44 - 04:51] traveling all the time. And their lifestyles look really amazing, right? And it&#x27;s really natural to
+[04:51 - 04:56] feel jealous in those kinds of situations. It feels like everybody is living this extravagant,
+[04:56 - 05:03] wonderful lifestyle except me. But then I close the app and I go outside and I notice, well,
+[05:03 - 05:10] the world is filled with just regular people like me. Like Instagram is this weird place where
+[05:10 - 05:17] all we see are these, you know, really fantastic lifestyles that are not really what most people
+[05:17 - 05:25] actually live is not really reality. And so some people don&#x27;t have that experience of seeing
+[05:25 - 05:32] the real world and they&#x27;re just so wrapped up in what they see online and they get a distorted
+[05:32 - 05:38] view of reality. And so we use this expression often to talk about these people where they&#x27;ve lost
+[05:38 - 05:45] what reality actually is. And they found themselves in like a weird corner of the internet or a dark
+[05:45 - 05:52] corner of the internet. It might be about politics, it might be about conspiracy theories, it might be
+[05:52 - 06:00] about ideas, about society. It could be like gender roles in society. It could be religious. It could
+[06:00 - 06:07] be anything, but it&#x27;s like how most normal people think it&#x27;s very different from that. That&#x27;s the
+[06:07 - 06:15] key point. So anyone who has had this break with reality and found themselves in a weird corner
+[06:15 - 06:20] of the internet and are spending too much time there, then we say, hey, you got to touch grass,
+[06:20 - 06:26] you have to go outside and well, actually, it&#x27;s not. This is a good point. When we say touch
+[06:26 - 06:32] grass, we don&#x27;t actually mean for someone to go outside and touch grass, right? It just means
+[06:32 - 06:39] log off the internet, go spend some time with real people and connect and try and get back
+[06:40 - 06:46] to ordinary life. I think that&#x27;s the meaning here. Indiana, did you have anything else to add to that?</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>Andrew 联想到自己刷 Instagram 时的感受：平台上似乎到处都是外表出众的人，他们穿昂贵的衣服、开最好的车、不断旅行，生活看起来非常精彩。在这种情况下，人很自然会产生嫉妒，好像所有人都过着奢华而美好的生活，只有自己没有。但当他关掉应用、走到外面，就会发现现实世界里大多数都是和自己一样的普通人。Instagram 展示的是一种非常特殊、并不代表多数人真实生活的景象。</p><p>有些人缺少这种“重新看见现实”的过程。他们完全被网上看到的内容包围，因此形成扭曲的现实观。人可能陷入互联网某个奇怪甚至阴暗的角落，内容可能涉及政治、阴谋论、社会观念、性别角色、宗教等。关键在于，这些圈子中的想法往往与普通社会对现实的基本理解相差很大。对于这种已经与现实产生断裂、又在某个网络角落花费过多时间的人，人们就可能说：你得去 touch grass。</p><p>不过，这并不是要求对方真的走出去摸草。它真正的意思是：退出网络，去和现实中的人相处，重新连接普通生活。Indiana 补充说，当一个人把大量注意力和心理能量投入某个主要存在于网络中的小众圈子、阴谋论或明星八卦，并且这种投入已经影响心理健康或人际关系时，就很适合说这个人需要 touch grass。Andrew 也认同：当这种兴趣或执念开始给生活制造问题时，就是这个表达最典型的使用场景。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-4">
+      <div class="block-head">
+        <div><span class="part-no">PART 04</span><h2>使用场景、语气与网络争论</h2></div>
+        <span class="time">06:47–10:46</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[06:47 - 06:54] Yeah, I think just jumping off on what you said there, like when you&#x27;re spending so much mental
+[06:54 - 07:01] energy and focus on something that really largely just exists online, like you mentioned,
+[07:01 - 07:06] some niche corner of the internet, some small community, maybe you&#x27;re getting really deep into
+[07:06 - 07:14] conspiracy theories, or you&#x27;re just super, super focused on this very kind of small community
+[07:14 - 07:19] of people or small interest, right? And it could be like we mentioned celebrity drama or like
+[07:19 - 07:24] yeah, conspiracy theories. If you&#x27;re spending so much time and energy on that that it&#x27;s affecting
+[07:24 - 07:29] your like mental health relationships, that&#x27;s when I would say, okay, touch grass.
+[07:30 - 07:35] Right. It&#x27;s really causing problems for you, you know, this interest or the subcession.
+[07:36 - 07:42] Yeah, yeah, when it&#x27;s causing problems, right? That&#x27;s a good time to use it. Now, Indiana, I don&#x27;t
+[07:42 - 07:48] know if I would actually say this to somebody&#x27;s face, like for example, Indiana, if you were spending
+[07:48 - 07:54] too much time online and I noticed you behaving in some weird ways because of this, I don&#x27;t think
+[07:54 - 08:00] I would say Indiana go touch grass. Like to me, that seems too rude and too strong and I&#x27;m sure you
+[08:00 - 08:06] probably feel the same way. Now, maybe if I was like in an argument, maybe with a family member,
+[08:06 - 08:11] like if my brother were spending too much time online or something, I could maybe say,
+[08:11 - 08:16] bro, go touch grass dude, like what? You&#x27;ve lost track of what&#x27;s real, you know, maybe in this
+[08:16 - 08:22] situation, I would say something like that. But in general, I don&#x27;t think I would use this with,
+[08:22 - 08:29] you know, work colleagues or acquaintances or even friends, really, it seems too strong.
+[08:29 - 08:33] So what kind of situations would you actually use this expression in?
+[08:33 - 08:40] Yeah, I think it&#x27;s, it sounds very dismissive and insulting. I agree with you to say directly
+[08:40 - 08:44] to somebody, right? If you&#x27;re trying to end an argument and just get the last word, yeah, you say
+[08:45 - 08:52] a touch grass, bro, like come on. But if I was complaining about someone, maybe somebody&#x27;s behavior
+[08:52 - 08:59] to somebody else, I might say like, yeah, Michael really needs to touch grass or Bethany cannot
+[08:59 - 09:04] stop talking about this weird conspiracy theory she&#x27;s getting into, like touch grass girl. Like,
+[09:04 - 09:10] I would say it complaining like that. But yeah, it&#x27;s quite rude to say to someone&#x27;s face about them.
+[09:11 - 09:17] Yeah, or I think we would maybe use it to talk about different groups of people, right? Like in
+[09:17 - 09:22] society, you could say, maybe I don&#x27;t know, high school kids these days, they need to touch grass
+[09:22 - 09:28] or something, right? You could use it to talk about a certain segment of society. But using it to
+[09:28 - 09:36] somebody&#x27;s face, I think, yeah, it is not really how we&#x27;d use it. And I do see this expression
+[09:36 - 09:44] a ton online. So one of my addictions, maybe I need to touch grass, but one of my social media
+[09:44 - 09:50] addictions that&#x27;s hard for me to break is Reddit. So I spend a little bit too much time on Reddit,
+[09:50 - 09:56] probably just reading through different discussions about news and different topics. And I see this
+[09:56 - 10:02] one on Reddit often people will get into an online argument and they&#x27;ll say to somebody, go touch grass,
+[10:02 - 10:09] meaning like log out of Reddit, stop posting so much, it goes spend some time with your family,
+[10:09 - 10:16] this kind of thing. Exactly. It&#x27;s a good one liner to just end an argument or to be dismissive.
+[10:16 - 10:22] So yeah, exactly because everything is so brief, comment based and write X formerly known as
+[10:22 - 10:27] Twitter, like you only have so many characters to use, like these short replies, it&#x27;s easy to just
+[10:27 - 10:34] insult somebody or get the last word. So go touch grass, bro. Yeah. It makes sense. I also see it
+[10:34 - 10:40] mostly online. And then I occasionally will hear it in day-to-day conversation, but mostly on
+[10:40 - 10:46] social media. Yep. Good. Okay. Well, we have one example prepared for you guys. We&#x27;re cutting it</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>Andrew 接着讨论这个表达的礼貌程度。他表示，即使 Indiana 因为上网太多而表现得有些奇怪，他也不太会当面直接说 Indiana, go touch grass，因为这听起来太强硬、太无礼。若是在和家人争论，例如弟弟因为长期泡在网上而失去对现实的判断，他或许会说 Bro, go touch grass, dude，意思是“你已经搞不清什么是真的了”。但在一般情况下，他不会对同事、普通熟人，甚至朋友直接使用。</p><p>Indiana 同意，这句话当面对别人说时非常轻蔑、很像在侮辱人。如果只是想终止争论并抢到最后一句，可以说 Touch grass, bro。但更常见的是在向第三个人抱怨某人的行为，例如 Michael really needs to touch grass，或者 Bethany 不停谈论她最近沉迷的奇怪阴谋论，于是吐槽说 Touch grass, girl。也可以把它用于某类群体，例如说现在的高中生需要多回归现实。</p><p>Andrew 还提到，他在 Reddit 上经常见到这个表达。他承认自己也有点沉迷 Reddit，经常浏览新闻及各种话题的讨论。在网络争论中，人们会用 Go touch grass 来表示：退出 Reddit，别再发这么多内容，去陪陪家人、过现实生活。Indiana 认为它很适合作为结束争论的简短一句话，因为在 X（原 Twitter）等平台上，人们只能用很短的评论互相回应，于是这种一句话式的嘲讽非常常见。两位主持人都认为，它主要出现在社交媒体上，现实日常对话中偶尔能听到，但频率较低。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-5">
+      <div class="block-head">
+        <div><span class="part-no">PART 05</span><h2>节目示例：相信地平说的 John</h2></div>
+        <span class="time">10:46–12:24</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[10:46 - 10:51] down just to one example today because like we said, we don&#x27;t really use this expression
+[10:51 - 10:57] too often when talking to people directly. So we have just one example and let&#x27;s take a listen to
+[10:57 - 11:06] it now. Here we go. Oh, I just saw John walk in the door. Listen, if he comes around talking to
+[11:06 - 11:11] about his flat or theory, just try to change the subject. Is he talking about that again?
+[11:12 - 11:18] Man, John&#x27;s a nice guy, but he really needs to touch grass and stop believing in these crazy ideas.
+[11:18 - 11:26] All right. In this example, we heard two friends at a party and they were hanging out at the party,
+[11:26 - 11:32] maybe just talking together and they noticed a new guest arrive at the party. John walked in the
+[11:32 - 11:41] door and John&#x27;s a nice guy, but he seems to really be obsessed and believe in this conspiracy theory,
+[11:41 - 11:47] which is called the flat earth theory. Do you guys know this one? The flat earth theory? Some people
+[11:47 - 11:53] believe that the earth is not round, that it&#x27;s flat. And yeah, there are some people online.
+[11:53 - 11:59] There&#x27;s a community of we call them flat earthers who believe this idea. Now, of course, we know
+[11:59 - 12:05] that the world is not flat. It&#x27;s round. So the two friends are talking about John and they say he
+[12:05 - 12:12] needs to touch grass, meaning he needs to stop believing in these conspiracy theories and instead just
+[12:13 - 12:18] not waste his time doing that kind of thing. So I think this is the kind of situation where you
+[12:18 - 12:24] would hear this expression used and maybe use it in your speaking as well, this kind of situation.</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>由于 touch grass 很少适合直接对人说，节目只准备了一个示例。情境是两位朋友在聚会上聊天，其中一人看到 John 走进门，便提醒另一人：如果 John 又开始讲他的地平说理论，就想办法换个话题。另一位朋友很惊讶 John 竟然还在谈这个，并说 John 人不错，但他真的需要 touch grass，不要再相信这些疯狂的想法。</p><p>Andrew 解释说，所谓 flat earth theory 就是认为地球不是圆的，而是平的。网上确实存在相信这种观点的群体，人们称他们为 flat earthers。当然，现实中我们知道地球不是平的。两位朋友说 John needs to touch grass，意思并不是让他去户外碰草，而是希望他停止相信这些网络阴谋论，不要继续把时间浪费在这些事情上。主持人认为，这种第三人称谈论某人沉迷网络观念的情境，正是听众最可能听到或使用 touch grass 的场景。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-6">
+      <div class="block-head">
+        <div><span class="part-no">PART 06</span><h2>Chronically / terminally online 的来源与含义</h2></div>
+        <span class="time">12:25–15:27</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[12:25 - 12:31] In the end, let&#x27;s move on to our second key expression for this episode, which as you mentioned
+[12:31 - 12:40] earlier is terminally online or chronically online. And perhaps we should start by defining
+[12:40 - 12:49] these two words terminally and chronically. What do these mean? So these are both adverbs that are
+[12:49 - 13:00] often used in medical contexts. So if I said terminal illness or terminally ill, this means a
+[13:00 - 13:07] disease that is going to kill you, right? Quite serious. Terminal means like you will die or it will end.
+[13:08 - 13:15] And chronically or chronic, we use this to talk about diseases that are ongoing or conditions
+[13:15 - 13:22] that are ongoing. So like if I said, I have chronically dry skin, then that means like this isn&#x27;t
+[13:22 - 13:28] just oh, this week because it&#x27;s really cold and dry out my skin is dry. Now this means this is
+[13:28 - 13:34] an ongoing problem for me. So it&#x27;s something that I deal with regularly. This is the opposite of
+[13:34 - 13:40] acute, for example. So those are those medical origins with these. We usually see these.
+[13:40 - 13:46] But the reason that we&#x27;re using them for to describe online is because we&#x27;re kind of talking about
+[13:46 - 13:53] this in a negative way. Our internet usage is so problematic that we&#x27;re talking about it like it&#x27;s
+[13:53 - 14:00] a disease. Right. So right, I could say I am terminally online admitting that I am way too
+[14:00 - 14:05] addicted to being online and paying attention to my little corner of the internet, whatever that
+[14:05 - 14:12] is, probably scrolling on X or Reddit, like you mentioned, or chronically online, which is basically
+[14:12 - 14:17] the same thing. But I do think terminally online is just a little stronger because it has this like
+[14:17 - 14:22] this is a fatal disease. I&#x27;m going to die from my internet addiction kind of joke behind it. So
+[14:23 - 14:29] yeah, exactly. And I think a lot of people do use this as a joke, right? You could say,
+[14:29 - 14:34] oh, I&#x27;m terminally online. You know, I think most people these days are really terminally online
+[14:34 - 14:41] because even though we might not be sitting at our device, scrolling 24, 7, we all have smartphones
+[14:41 - 14:48] that are around us, almost 24 hours a day, seven days a week. And we have notifications. And
+[14:48 - 14:54] like anybody can send me a message. And I&#x27;ll pick it up right away and see it. And so that means
+[14:55 - 15:01] we&#x27;re almost always connected 24, seven, right? So we use these expressions terminally online,
+[15:01 - 15:09] chronically online, just to emphasize how much someone does spend on the internet or on apps or
+[15:09 - 15:15] on social media, all of these different things. Okay, so what would be the difference then between
+[15:15 - 15:22] terminally online, chronically online and touch grass? I have a feeling that they&#x27;re pretty
+[15:22 - 15:27] different, although they&#x27;re similar, but the nuance is quite different. What is that nuance exactly?</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>随后节目进入第二组核心表达：terminally online 和 chronically online。Indiana 先解释 terminally 与 chronically 的原始含义。这两个副词常用于医疗语境。terminal illness 或 terminally ill 指会导致死亡的绝症或病入膏肓的状态，terminal 带有“走到终点、最终会死亡”的意思。chronic / chronically 则描述持续存在、长期反复的问题。例如 I have chronically dry skin，不是说皮肤只在这个星期因为天气寒冷而干燥，而是长期都要面对这个问题。它与 acute，也就是急性的、短期突然发生的情况相反。</p><p>把这些医学词汇与 online 搭配，是为了用负面而夸张的方式形容网络使用：一个人上网的习惯已经严重到像疾病一样。I’m terminally online 是承认自己太沉迷网络，总是在关注属于自己的某个网络角落，可能不停刷 X、Reddit 等。chronically online 的含义基本相同，但 terminally online 更强，因为背后带有“这像致命疾病，我会死于网瘾”的黑色幽默。</p><p>Andrew 认为很多人会把这些表达当作自嘲。现代人即使没有一天二十四小时盯着屏幕，智能手机也几乎始终在身边，各种通知随时出现，别人发来消息后，我们通常马上就会拿起手机查看。因此，人们几乎一直处于连接状态。terminally online 和 chronically online 都是在强调一个人在互联网、应用程序或社交媒体上花费了太多时间。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-7">
+      <div class="block-head">
+        <div><span class="part-no">PART 07</span><h2>三个表达的细微差别</h2></div>
+        <span class="time">15:28–17:50</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[15:28 - 15:34] I would say like, you know, you could call yourself terminally online or chronically online and
+[15:34 - 15:40] kind of you&#x27;re lightly criticizing your own bad habits of using the internet too much. And you
+[15:40 - 15:46] could say this about a lot of people. And it&#x27;s just not as hurtful or dismissive as touch grass,
+[15:47 - 15:54] you really say touch grass when something is, somebody is online way too much and they&#x27;re way too
+[15:54 - 15:59] deep in some corner of the internet. And it&#x27;s causing a lot of issues for their perception of
+[15:59 - 16:05] reality and their relationships with others. Terminally online, chronically online, like this is not
+[16:05 - 16:12] so strong of a situation. I would say that about, yeah, like if somebody is scrolling through X all
+[16:12 - 16:18] the time and tweeting all the time and checking like, you know, the latest news from their favorite
+[16:18 - 16:22] celebrities. And it&#x27;s just kind of like one of their big interests and, you know, maybe they spent
+[16:22 - 16:28] a little too much time on it, but they&#x27;re not like their life is not being hugely impacted by this.
+[16:28 - 16:33] Like you could just say, yeah, if this terminally online would you agree with me on this one, Andrew,
+[16:33 - 16:38] or do you think there&#x27;s some other distinctions here that I haven&#x27;t covered? No, I think you did a
+[16:38 - 16:45] great job there. I would say, yeah, touch grass is for a very serious situation where somebody has
+[16:45 - 16:52] a break from the mainstream view about how reality works. And they have like these very, very
+[16:52 - 16:58] different ideas about society, politics, science, these kinds of things. That would be somebody who
+[16:58 - 17:04] needs to touch grass because they&#x27;ve lost that connection with reality. Terminally online, chronically
+[17:04 - 17:11] online just means you spend too much time online. I think I realized I was a terminally online
+[17:11 - 17:17] person when, you know, maybe I&#x27;m out for the day in Indiana and then I come home in the evening
+[17:17 - 17:24] and instead of relaxing in the evening before I go to sleep by reading a book, I scroll on my phone,
+[17:24 - 17:30] I doom scroll on my phone. That&#x27;s like terminally online. So when you&#x27;re reaching for your device
+[17:30 - 17:35] instead of doing some other activity and I think, yeah, I probably should be reaching for a book
+[17:35 - 17:41] and reading a novel or something, but instead I look at my phone. That&#x27;s like terminally online.
+[17:43 - 17:50] Not so great, but I admit it&#x27;s true most days. Okay, so now that we&#x27;re clear about what the</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>Andrew 接着询问：terminally online、chronically online 和 touch grass 到底有什么不同？Indiana 认为，一个人可以说自己 terminally online 或 chronically online，用比较轻松的方式批评自己上网过多的坏习惯；也可以这样形容很多人。这两种说法通常没有 touch grass 那么伤人或轻蔑。</p><p>touch grass 更适合严重情况：某人不仅上网时间太长，还深陷互联网某个角落，以至于现实认知和人际关系都受到明显影响。相较之下，terminally online 或 chronically online 可以只是形容某人不断刷 X、频繁发帖、总在追踪喜欢的明星新闻，并把上网当作很大的兴趣。虽然花费的时间可能有点多，但生活并没有受到巨大破坏。</p><p>Andrew 完全同意。他进一步区分说，touch grass 常用于一个人已经偏离主流社会对现实的基本认识，对社会、政治、科学等形成非常极端且异常的理解，也就是和现实失去连接。terminally online 和 chronically online 通常只是表示花太多时间在线。Andrew 发现自己“病入膏肓地在线”的一个迹象是：白天在外面忙完回家后，他本可以在睡前读书或放松，却选择拿手机不停 doomscroll。明明应该拿起一本小说，最后却伸手去拿手机，这就是 terminally online。他承认，这种情况在多数日子里都真实存在。</p></section>
+      </div>
+    </article>
+    <article class="transcript-block" id="part-8">
+      <div class="block-head">
+        <div><span class="part-no">PART 08</span><h2>第二个示例、实用句块与节目结尾</h2></div>
+        <span class="time">17:50–21:03</span>
+      </div>
+      <div class="parallel">
+        <section class="lang english"><div class="lang-label">ENGLISH TRANSCRIPT</div><pre>[17:50 - 17:56] meaning is and the kind of situations when we use it, let&#x27;s hear an example. Again, we have
+[17:56 - 18:02] another one prepared for you guys. It&#x27;s a little drama here in Indiana and I will read it for you.
+[18:02 - 18:14] So let&#x27;s take a listen now. Here we go. I read that book sales are way, way, way down from a decade ago.
+[18:15 - 18:21] I mean, are you surprised? Everyone&#x27;s so terminally online these days that does not shock me one bit.
+[18:21 - 18:28] All right, so in this short dialogue, a couple of friends are talking about book sales and that
+[18:28 - 18:33] they have become way less than they used to be. They&#x27;re way down from a decade ago.
+[18:34 - 18:39] But one friend is really not so surprised about that because, yeah, everybody is using their phones
+[18:39 - 18:45] all the time. Everybody&#x27;s online. There&#x27;s some, this, this bright screen in our hands is drawing
+[18:45 - 18:51] way more attention from us than the boring flat paper book. And yeah, people just are
+[18:51 - 18:58] truly reading less these days. So she is not surprised. She says everybody is terminally online.
+[18:58 - 19:04] So it&#x27;s really not a shocking piece of news. Indiana, I like that expression that we heard in the
+[19:04 - 19:10] example. That doesn&#x27;t shock me one bit. That doesn&#x27;t shock me one bit, which is just a great, like,
+[19:10 - 19:17] chunk to memorize, right? A really natural phrase that you could say when something is not
+[19:17 - 19:23] shocking or not surprising at all. That doesn&#x27;t shock me one bit. I&#x27;d encourage all of our listeners
+[19:23 - 19:28] just to memorize that chunk. And you can use it when you&#x27;re not surprised by something. Your English
+[19:28 - 19:34] will sound super, super natural. Okay, well, I think we&#x27;re pretty much at the end here for this
+[19:34 - 19:38] episode. Everyone, thank you for listening all the way to the end. You can pat yourself on the
+[19:38 - 19:44] back for finishing a great English lesson here today with me and with Indiana. Of course,
+[19:44 - 19:50] we&#x27;d like to turn things over to you now. You&#x27;ve done some English listening, but it&#x27;s time to be
+[19:50 - 19:58] active with your English. And you can do that by being terminally online. I&#x27;m sorry. The, the,
+[19:58 - 20:03] the ways that we have to connect with you guys are all online. So we do have to be terminally
+[20:03 - 20:09] online to do this, but we have our discord server, which is the place where our community gathers
+[20:09 - 20:14] and we practice our English and grow our skills together. It would be a great place to practice
+[20:14 - 20:19] using some of these expressions. And you could make some example sentences and share them with us.
+[20:19 - 20:25] And our community there, of course, it&#x27;s free to join and the link to do so is in the description
+[20:25 - 20:31] for this episode. Plus, we&#x27;re going to have some speaking classes about this episode. And we&#x27;ll talk
+[20:31 - 20:37] about some of these issues that we&#x27;ve discussed in more detail. It&#x27;s a cool way to talk with me
+[20:37 - 20:43] and to talk with Indiana and other awesome, highly motivated English learners from around the
+[20:43 - 20:48] world, just like yourself. If you want to join the speaking classes, though, you do have to be a
+[20:48 - 20:54] member. Check out our website, qlubs.com for all of the details about membership. And you can sign
+[20:54 - 21:01] up and become a member today. Guys, take care and we&#x27;ll catch you in the next episode. Until then,
+[21:01 - 21:03] goodbye. Bye everybody.</pre></section>
+        <section class="lang chinese"><div class="lang-label">中文对照</div><p>在第二个简短对话中，一位朋友说自己看到一则消息：与十年前相比，如今图书销量大幅下降。另一位朋友回答，她一点也不惊讶，因为现在所有人都太 terminally online 了。主持人解释，大家总在使用手机、始终在线，手中明亮的屏幕比平淡的纸质书更能吸引注意力，因此人们确实比以前读得更少。正因为大家都沉迷网络，图书销量下降并不是什么令人震惊的消息。</p><p>Andrew 特别指出对话中的句块 That doesn’t shock me one bit。这是一个非常自然、值得整体记忆的固定说法，用于表示“这完全不令我意外”或“我一点也不惊讶”。听众可以直接背下整个句块，在遇到毫不意外的事情时使用，会让英语听起来更自然。</p><p>节目临近结束时，两位主持人感谢听众听完整期节目，并说大家可以因为完成了一堂很棒的英语课而表扬自己。接下来，听众需要从被动听力转向主动使用英语。Andrew 开玩笑说，大家可以通过“继续 terminally online”来练习，因为与 Culips 社群互动的方式都在线上。听众可以加入免费的 Discord 社群，用本期表达造句并与其他学习者交流；会员还可以参加围绕本期内容开展的口语课，和主持人以及来自世界各地、学习动力很强的英语学习者深入讨论。最后，两位主持人告别，并表示下一期节目再见。</p></section>
+      </div>
+    </article></div>
+</section>
+
+<section class="page" id="notes">
+  <div class="page-title"><p class="eyebrow">DEEP STUDY NOTES</p><h1>EP294 深度学习笔记</h1><p>这一部分建立在完整 Transcript 之上，不替代原文。</p></div>
+  <article class="card">
+    <h2>一、本期核心内容</h2>
+    <p>节目围绕现代网络生活中的三个表达展开：<strong>touch grass</strong>、<strong>chronically online</strong> 与 <strong>terminally online</strong>。三者都与“花太多时间上网”有关，但严重程度、说话对象和礼貌程度并不相同。</p>
+  </article>
+  <article class="card">
+    <h2>二、表达语气对比</h2>
+    <div class="table">
+      <div class="tr head"><span>表达</span><span>核心含义</span><span>语气与使用</span></div>
+      <div class="tr"><span><b>chronically online</b></span><span>长期花太多时间上网</span><span>较轻，可用于自嘲</span></div>
+      <div class="tr"><span><b>terminally online</b></span><span>夸张地形容严重沉迷网络</span><span>更戏谑、更强烈</span></div>
+      <div class="tr"><span><b>touch grass</b></span><span>停止沉迷网络，重新接触现实</span><span>轻蔑或不耐烦，直接对人说可能冒犯</span></div>
+    </div>
+  </article>
+  <article class="card">
+    <h2>三、节目中的核心逻辑</h2>
+    <ol>
+      <li>社交媒体经常只展示极端、光鲜或小众的生活切片。</li>
+      <li>长期沉浸其中可能使人把网络世界误认为现实世界。</li>
+      <li>当上网只是习惯过度时，可说 chronically/terminally online。</li>
+      <li>当网络内容已经扭曲现实判断和人际关系时，才更接近 need to touch grass。</li>
+    </ol>
+  </article>
+</section>
+
+<section class="page" id="expressions">
+  <div class="page-title"><p class="eyebrow">VOCABULARY BANK</p><h1>表达与词汇库</h1><p>本期 Transcript 中值得反复使用的语言材料。</p></div>
+  <div class="grid">
+    <article class="word"><small>EP294</small><h3>touch grass</h3><p>少上网、回归现实；语气较强，常带否定或嘲讽。</p></article><article class="word"><small>EP294</small><h3>chronically online</h3><p>长期泡在网上；可以轻松地用于自嘲。</p></article><article class="word"><small>EP294</small><h3>terminally online</h3><p>严重沉迷网络；比 chronically online 更夸张。</p></article><article class="word"><small>EP294</small><h3>be cooped up inside</h3><p>长时间闷在屋里或被困在室内。</p></article><article class="word"><small>EP294</small><h3>get too deep into something</h3><p>在某件事中陷得太深、过度投入。</p></article><article class="word"><small>EP294</small><h3>be wrapped up in</h3><p>完全沉浸于某事，注意力都被它占据。</p></article><article class="word"><small>EP294</small><h3>lose touch with reality</h3><p>与现实脱节，无法准确判断真实情况。</p></article><article class="word"><small>EP294</small><h3>a weird corner of the internet</h3><p>互联网中某个奇怪、小众或极端的圈子。</p></article><article class="word"><small>EP294</small><h3>get the last word</h3><p>在争论中说最后一句，抢到口头上的最后优势。</p></article><article class="word"><small>EP294</small><h3>one-liner</h3><p>简短、有力或幽默的一句话。</p></article><article class="word"><small>EP294</small><h3>doomscroll</h3><p>不停地刷负面新闻或令人焦虑的内容。</p></article><article class="word"><small>EP294</small><h3>That doesn’t shock me one bit.</h3><p>这完全不令我意外；我一点也不惊讶。</p></article>
+  </div>
+</section>
+
+<section class="page" id="practice">
+  <div class="page-title"><p class="eyebrow">ACTIVE PRACTICE</p><h1>跟读与输出练习</h1><p>完成全文理解后，再进入主动输出。</p></div>
+  <div class="practice-list">
+    <article><div><b>01</b><p>John really needs to touch grass.</p><small>John 真的需要少上网、回归现实。</small></div><button class="speak" data-speak="John really needs to touch grass.">朗读</button></article><article><div><b>02</b><p>Everyone is terminally online these days.</p><small>现在大家都像是严重沉迷网络一样。</small></div><button class="speak" data-speak="Everyone is terminally online these days.">朗读</button></article><article><div><b>03</b><p>That doesn’t shock me one bit.</p><small>我一点也不意外。</small></div><button class="speak" data-speak="That doesn’t shock me one bit.">朗读</button></article><article><div><b>04</b><p>He has completely lost touch with reality.</p><small>他已经完全与现实脱节了。</small></div><button class="speak" data-speak="He has completely lost touch with reality.">朗读</button></article><article><div><b>05</b><p>I meant to read a book, but I doomscrolled instead.</p><small>我本来想读书，结果却一直刷负面信息。</small></div><button class="speak" data-speak="I meant to read a book, but I doomscrolled instead.">朗读</button></article><article><div><b>06</b><p>She’s too wrapped up in celebrity drama.</p><small>她太沉迷明星八卦了。</small></div><button class="speak" data-speak="She’s too wrapped up in celebrity drama.">朗读</button></article>
+  </div>
+  <article class="card">
+    <h2>口语问题</h2>
+    <p><b>Do you think people are becoming too chronically online? Why or why not?</b></p>
+    <textarea id="answer" placeholder="在这里写下你的英文回答，内容会自动保存在浏览器中。"></textarea>
+  </article>
+</section>
+</main>
+<script src="app.js"></script>
+</body></html>
