@@ -1,13 +1,12 @@
-# Nala's English Learning Hub V2
+# Nala's English Learning Workspace V3
 
-本版将每一期内容调整为：
+## 核心设计原则
+- 首页以学习效率、进度和成果转化为核心
+- Transcript 删除全部时间戳
+- 英文与中文保持左右对照布局
+- 每期按照 Transcript → Vocabulary → Shadowing → Speaking → Review 形成学习闭环
+- 学习进度和文字回答保存在当前浏览器
 
-1. Transcript 全文中英对照
-2. 深度学习笔记
-3. 表达与词汇拓展
-4. 跟读与主动输出
-
-上传 GitHub 时，用本压缩包中的三个网站文件替换仓库根目录中的同名文件：
-- index.html
-- styles.css
-- app.js
+## 更新 GitHub Pages
+用本压缩包中的 `index.html`、`styles.css`、`app.js` 和 `README.md`
+覆盖仓库根目录中的同名文件，然后提交到 main 分支。
