@@ -1,6 +1,7 @@
 
-const episodeConfig={ep294:{reads:8,total:12},ep350:{reads:11,total:15}};
+const episodeConfig={ep251:{reads:8,total:12},ep294:{reads:8,total:12},ep350:{reads:11,total:15}};
 const searchItems=[
+ {title:'Simplified Speech #251 – Popular Baby Names',desc:'Names, family traditions, culture, and identity',url:rootPath()+'episodes/ep251.html'},
  {title:'Chatterbox #350 – Hyperblanding',desc:'Globalization, culture, AI, and sameness',url:rootPath()+'episodes/ep350.html'},
  {title:'Catch Word #294 – Touch Grass',desc:'Internet slang and online life',url:rootPath()+'episodes/ep294.html'},
  {title:'Vocabulary Database',desc:'28 reusable language assets',url:rootPath()+'vocabulary.html'},
@@ -30,9 +31,9 @@ function updateAll(){
  document.querySelectorAll(`[data-progress-label="${ep}"]`).forEach(x=>x.textContent=p.done+' of '+p.total+' steps');
  document.querySelectorAll(`[data-ring="${ep}"]`).forEach(x=>{x.style.background=`conic-gradient(var(--accent) ${p.pct*3.6}deg,#dce3db 0deg)`;x.querySelector('span').textContent=p.pct+'%'});
  });
- const totalReads=episodeProgress('ep294').readsDone+episodeProgress('ep350').readsDone;
- const moduleDone=['ep294','ep350'].reduce((sum,ep)=>sum+['vocab','shadowing','speaking','review'].filter(s=>localStorage.getItem(key(ep,s))==='1').length,0);
- const outputs=['ep294','ep350'].filter(ep=>{const a=localStorage.getItem('nala-v4-answer-'+ep)||'';return localStorage.getItem(key(ep,'speaking'))==='1'||a.trim().length>20}).length;
+ const totalReads=episodeProgress('ep251').readsDone+episodeProgress('ep294').readsDone+episodeProgress('ep350').readsDone;
+ const moduleDone=['ep251','ep294','ep350'].reduce((sum,ep)=>sum+['vocab','shadowing','speaking','review'].filter(s=>localStorage.getItem(key(ep,s))==='1').length,0);
+ const outputs=['ep251','ep294','ep350'].filter(ep=>{const a=localStorage.getItem('nala-v4-answer-'+ep)||'';return localStorage.getItem(key(ep,'speaking'))==='1'||a.trim().length>20}).length;
  document.getElementById('readTotal')&&(document.getElementById('readTotal').textContent=totalReads+' / 19');
  document.getElementById('outputTotal')&&(document.getElementById('outputTotal').textContent=moduleDone+' / 8');
  document.getElementById('writtenOutputs')&&(document.getElementById('writtenOutputs').textContent=outputs+' completed responses');

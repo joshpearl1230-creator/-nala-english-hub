@@ -45,6 +45,7 @@
 - Progress Dashboard
 - Catch Word #294 — Touch Grass
 - Chatterbox #350 — Hyperblanding
+- Simplified Speech #251 — Popular Baby Names
 - 左右中英对照 Transcript
 - Episode Overview
 - Vocabulary & Expressions
